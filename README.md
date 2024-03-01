@@ -2,6 +2,8 @@
 
 > Simple Python script for sending html messages to a matrix room
 
+With this script it is also possible to send messages to an _encrypted_ room. However, the message sent by the script itself is not encrypted.
+
 ![Example](/images/example.png)
 
 ## Requirements
@@ -21,8 +23,6 @@
 
   > **You have to join** with this special (Bot) account to **this room** before!  
   > It's available in room settings.
-
-> With this script it is also possible to send messages to an _encrypted_ room. However, the message sent by the script itself is not encrypted.
 
 ## Usage
 
