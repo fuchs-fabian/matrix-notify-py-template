@@ -8,7 +8,7 @@ MATRIX_HOST = "https://matrix-client.matrix.org"
 MATRIX_TOKEN = ""
 MATRIX_ROOM = ""
 
-def generate_messages():
+def create_messages():
     message = (
         f"Hello World!"
     )
@@ -18,11 +18,7 @@ def generate_messages():
     )
     return message, message_html
 
-def send_matrix_message(message, message_html):
-    matrix_host = MATRIX_HOST
-    matrix_token = MATRIX_TOKEN
-    matrix_room = MATRIX_ROOM
-
+def send(message, message_html):
     # Data send to Matrix
     matrix_data_dict = {
         "msgtype": "m.text",
@@ -30,26 +26,22 @@ def send_matrix_message(message, message_html):
         "format": "org.matrix.custom.html",
         "formatted_body": message_html,
     }
-    matrix_data = json.dumps(matrix_data_dict)
-    matrix_data = matrix_data.encode("utf-8")
-
-    # Random transaction ID
-    txn_id = str(uuid.uuid4())
+    matrix_data = json.dumps(matrix_data_dict).encode("utf-8")
 
     # Authorization headers
-    matrix_headers = {"Authorization": "Bearer " + matrix_token, "Content-Type": "application/json", "Content-Length": str(len(matrix_data))}
+    matrix_headers = {"Authorization": "Bearer " + MATRIX_TOKEN, "Content-Type": "application/json", "Content-Length": str(len(matrix_data))}
 
     # Request
-    req = requests.put(url=f"{matrix_host}/_matrix/client/r0/rooms/{matrix_room}/send/m.room.message/{txn_id}", data=matrix_data, headers=matrix_headers)
+    request = requests.put(url=f"{MATRIX_HOST}/_matrix/client/r0/rooms/{MATRIX_ROOM}/send/m.room.message/{str(uuid.uuid4())}", data=matrix_data, headers=matrix_headers)
 
-    if req.status_code == 200:
+    if request.status_code == 200:
         print("Message sent successfully")
     else:
-        print(f"Failed to send message. Status code: {req.status_code}")
+        print(f"Failed to send message. Status code: {request.status_code}")
 
 # Run
 try:
-    message, message_html = generate_messages()
-    send_matrix_message(message, message_html)
+    message, message_html = create_messages()
+    send(message, message_html)
 except Exception as e:
     print(f"An error occurred: {e}")
