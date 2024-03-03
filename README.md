@@ -1,8 +1,8 @@
 # matrix-notify-py
 
-> Simple Python script for sending html messages to a matrix room, optionally with E2E
+> Simple Python script for sending HTML messages to a [Matrix](https://matrix.org/) room, optionally with E2E
 
-It took some time to find a good solution for sending encrypted messages to [Matrix](https://matrix.org/) in a simple and uncomplicated way. I have therefore endeavoured to document everything as well as possible.
+It took some time to find a good solution for sending encrypted messages to Matrix in a simple and uncomplicated way. I have therefore endeavoured to document everything as well as possible.
 
 If you have any suggestions for improvement or ideas, I would be very grateful if you would simply create an issue or open a PR with your proposed solution.
 
@@ -154,13 +154,13 @@ conda create --name matrix_env python=3.10
 conda activate matrix_env
 ```
 
-Update python:
+Update Python:
 
 ```bash
 conda update python
 ```
 
-(Upgrade python:)
+(Upgrade Python:)
 
 ```bash
 conda upgrade python
