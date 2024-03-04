@@ -45,7 +45,7 @@ Sending **unencrypted** messages to an **encrypted**/**unencrypted** room.
 |                | example / additional information                                                                                                                                                                                          |
 | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | homeserver url | E.g. for a standard Matrix user `https://matrix-client.matrix.org` (available in _account_ settings)                                                                                                                      |
-| access token   | To get it in [Element](https://element.io/), log in as the created user, tap on the profile picture on the top left, and go to all settings → help and info. There should be a dropdown menu on the bottom (access token) |
+| access token   | To get it in [Element](https://element.io/), log in as the created user, tap on the profile picture on the top left, and go to `All settings` → `Help & About`. There should be a dropdown menu on the bottom (`Access Token`) |
 | room id        | **You have to join** with this special account to **this room** before! (available in _room_ settings)                                                                                                                    |
 
 ### Usage
