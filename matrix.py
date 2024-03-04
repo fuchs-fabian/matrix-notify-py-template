@@ -24,8 +24,8 @@ def create_messages():
 def send_with_e2e(message_html, room_id):
     command = [
         "matrix-commander",
-        "--room", room_id,
         "-m", message_html,
+        "--room", room_id,
         "--html",
     ]
 

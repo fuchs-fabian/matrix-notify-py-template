@@ -1,6 +1,6 @@
 # matrix-notify-py
 
-> Simple Python script for sending HTML messages to a [Matrix](https://matrix.org/) room, optionally with E2E
+Simple Python script for sending HTML messages to a [Matrix](https://matrix.org/) room, optionally with E2E.
 
 It took some time to find a good solution for sending encrypted messages to Matrix in a simple and uncomplicated way. I have therefore endeavoured to document everything as well as possible.
 
@@ -79,7 +79,6 @@ Sending **encryptet** messages to an **encrypted** room.
 
 - Python 3.10+
 - [`matrix-commander`](https://github.com/8go/matrix-commander/tree/master)
-- [`libolm`](https://gitlab.matrix.org/matrix-org/olm)
 
 |         | example / additional information                                                                       |
 | ------- | ------------------------------------------------------------------------------------------------------ |
@@ -100,28 +99,15 @@ Failed to send message (with E2E). Error: Command '['matrix-commander', '--room'
 | `device`       | name for the sending device         | matrix-commander-notifier        |
 | `user-login`   | your username                       | @test:matrix.org                 |
 | `password`     | login password for your bot account |                                  |
-| `access-token` | available in account settings       |                                  |
 | `homeserver`   | homeserver of your bot account      | https://matrix-client.matrix.org |
 | `room-default` | room id                             | !xyz:matrix.org                  |
 
 #### Installation
 
-On Debian, Ubuntu, and Debian/Ubuntu derivative distributions:
+A credentials file must be created for the `matrix-commander`. To do this, execute the following:
 
 ```bash
-sudo apt install libom-dev
-```
-
-On Fedora or Fedora derivative distributions:
-
-```bash
-sudo dnf install libolm-devel
-```
-
-A credentials file must then be created for the `matrix-commander`. To do this, execute the following:
-
-```bash
-matrix-commander --login PASSWORD --device 'REPLACE-ME' --user-login 'REPLACE-ME' --password 'REPLACE-ME' --access-token 'REPLACE-ME' --homeserver 'REPLACE-ME' --room-default 'REPLACE-ME'
+matrix-commander --login PASSWORD --device 'REPLACE-ME' --user-login 'REPLACE-ME' --password 'REPLACE-ME' --homeserver 'REPLACE-ME' --room-default 'REPLACE-ME'
 ```
 
 > You have to replace all `REPLACE-ME` with your own credentials!
@@ -130,6 +116,12 @@ To verify a room session, once you have been invited and accepted into the room,
 
 In this case, it is better to start from an [Element](https://element.io/) room of the account with which you want to receive the encrypted messages, for example.
 
+To verify a session immediately, send a message directly to a room:
+
+```bash
+matrix-commander --room 'REPLACE-ME' -m 'First encrypted message :)'
+```
+
 Therefore:
 
 ```bash
@@ -137,12 +129,6 @@ matrix-commander --verify emoji
 ```
 
 > If you do not perform this step, the messages will be sent encrypted, but the session will not be verified and a warning will be displayed along with the message in messenger.
-
-To send a message directly from your console:
-
-```bash
-matrix-commander --room 'REPLACE-ME' -m 'Test message' --html
-```
 
 ## Test and try with [Conda](https://docs.conda.io/en/latest/)
 
@@ -172,6 +158,6 @@ Run [`matrix.py`](./matrix.py):
 python3 matrix.py
 ```
 
-## Inspiration
+## Repository that uses this template
 
 - [Checkmk-Matrix-Notifications](https://github.com/fuchs-fabian/Checkmk-Matrix-Notifications)
