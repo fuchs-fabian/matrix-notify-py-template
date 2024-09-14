@@ -11,7 +11,7 @@ You are welcome to use this template and adapt it to your needs.
 To get it:
 
 ```bash
-wget https://raw.githubusercontent.com/fuchs-fabian/matrix-notify-py/main/matrix.py
+wget https://raw.githubusercontent.com/fuchs-fabian/matrix-notify-py-template/main/matrix.py
 ```
 
 Make the script executable if required:
