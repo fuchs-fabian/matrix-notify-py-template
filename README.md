@@ -1,6 +1,6 @@
-# matrix-notify-py
+# matrix-notify-py-template
 
-Simple Python script for sending HTML messages to a [Matrix](https://matrix.org/) room, optionally with E2E.
+Simple Python template for sending HTML messages to a [Matrix](https://matrix.org/) room, optionally with E2E.
 
 It took some time to find a good solution for sending encrypted messages to Matrix in a simple and uncomplicated way. I have therefore endeavoured to document everything as well as possible.
 
